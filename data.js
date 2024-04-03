@@ -8,7 +8,6 @@ const group1 = [
   Array.from({ length: 10 }, () => random(0, 9)), // Range: 0-9, Array size: 10
   Array.from({ length: 1000 }, () => random(0, 999)), // Range: 0-999, Array size: 1000
   Array.from({ length: 100000 }, () => random(0, 99999)), // Range: 0-99999, Array size: 100000
-  // Array.from({ length: 10000000 }, () => random(0, 999999999)), // Range: 0-999999999, Array size: 10000000
   Array.from({ length: 100000 }, () => random(0, 9999999)), // Range: 0-9999999, Array size: 100000
   Array.from({ length: 100000 }, () => random(0, 999999999)), // Range: 0-999999999, Array size: 100000
 ];
