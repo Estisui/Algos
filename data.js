@@ -1,8 +1,8 @@
-const {
+import {
   random,
   generateAlmostSortedArray,
   generateWithPercentageOfRepeating,
-} = require("./utils");
+} from "./utils.js";
 
 const group1 = [
   Array.from({ length: 10 }, () => random(0, 9)), // Range: 0-9, Array size: 10
@@ -57,7 +57,7 @@ const group5 = [
   [generateWithPercentageOfRepeating(size100000, ninety)],
 ];
 
-const AllOfGroups = [
+export const groups = [
   // === RANDOMLY SORTED ELEMENTS FROM 10^1 -> 10^7
   ["Array of random elements " + group1[0].length + " length", group1[0]],
   ["Array of random elements " + group1[1].length + " length", group1[1]],
@@ -137,5 +137,3 @@ const AllOfGroups = [
     group5[4][0],
   ],
 ];
-
-module.exports.AllOfGroups = AllOfGroups;

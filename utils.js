@@ -1,9 +1,8 @@
-const fs = require("fs");
+import { appendFileSync } from "fs";
 
-const MAX_ARRAY_LENGTH = 4294967295;
-function writingIntoFile(fileName, data) {
+export function writingIntoFile(fileName, data) {
   try {
-    fs.appendFileSync(fileName, data);
+    appendFileSync(fileName, data);
     return true;
   } catch (err) {
     console.log(fileName);
@@ -24,7 +23,7 @@ function writingIntoFile(fileName, data) {
   // });
 }
 
-function getAllMethods(obj) {
+export function getAllMethods(obj) {
   let methods = [];
   let proto = Object.getPrototypeOf(obj);
   let keys = Object.getOwnPropertyNames(proto);
@@ -34,11 +33,12 @@ function getAllMethods(obj) {
   methods = methods.concat(protoMethods);
   return methods;
 }
-function random(min, max) {
+
+export function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function generateAlmostSortedArray(size, numSwaps) {
+export function generateAlmostSortedArray(size, numSwaps) {
   const array = Array.from({ length: size }, (_, index) => index);
   for (let i = 0; i < numSwaps; i++) {
     const index1 = random(0, size - 1);
@@ -48,7 +48,7 @@ function generateAlmostSortedArray(size, numSwaps) {
   return array;
 }
 
-function generateWithPercentageOfRepeating(size, percentage) {
+export function generateWithPercentageOfRepeating(size, percentage) {
   const NUM = random(0, 100);
   const array = Array.from({ length: size });
   for (let i = 0; i < Math.floor(size * percentage); i++) {
@@ -131,26 +131,3 @@ function uniteBothSorted(arr1, arr2) {
   }
   return result;
 }
-
-function div(arr, from = 0, to = arr.length) {
-  let arr1 = [];
-  for (let i = from; i < to; i++) {
-    arr1.push(arr1[i]);
-  }
-  return arr1;
-}
-
-module.exports = {
-  div,
-  generateWithPercentageOfRepeating,
-  uniteBothSorted,
-  pivot,
-  writingIntoFile,
-  fillArrayWithNumbers,
-  generateAlmostSortedArray,
-  getAllMethods,
-  random,
-  MAX_ARRAY_LENGTH,
-  getDigit,
-  mostDigits,
-};

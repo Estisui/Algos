@@ -1,4 +1,4 @@
-module.exports = class Quadratic {
+export default class Quadratic {
   constructor(array) {
     this.array = array;
   }

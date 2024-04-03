@@ -1,4 +1,4 @@
-module.exports = class nLogNSorts {
+export default class nLogNSorts {
   constructor(array) {
     this.array = array;
   }
