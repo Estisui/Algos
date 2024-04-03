@@ -7,7 +7,7 @@ import { groups } from "./data.js";
 truncateSync("results.csv", 0)
 const csvRows = [];
 
-const instance = new Sorts([]); // Instantiate the Quadratic class
+const instance = new Sorts();
 const arrayOfSorts = getAllMethods(instance).filter(
   (el) => el !== "constructor"
 );
@@ -16,13 +16,14 @@ const arrayOfSorts = getAllMethods(instance).filter(
 csvRows.push(`,${arrayOfSorts.join(',')}`);
 
 for (let i = 0; i < groups.length; i++) {
-  instance.array = groups[i][1];
+  let array = groups[i][1];
   let typeOfTestData = groups[i][0];
   // add row with arrayType
   csvRows[i + 1] = (`${typeOfTestData},`);
   arrayOfSorts.forEach((typeOfSortingAlgo, index) => {
     let start = performance.now().toFixed(2);
-    instance[typeOfSortingAlgo]();
+    let copyArray = [...array];
+    instance[typeOfSortingAlgo](copyArray);
     let end = performance.now().toFixed(2);
     let timeBetweenStartStopMS = (end - start).toFixed(2);
     console.log(`testCase ${i + 1}/${groups.length}: algorithm ${index + 1}/${arrayOfSorts.length}`);

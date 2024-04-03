@@ -49,11 +49,11 @@ const size10000 = 10000;
 const size100000 = 100000;
 
 const group5 = [
-  [generateWithPercentageOfRepeating(size10, ten)],
-  [generateWithPercentageOfRepeating(size100, twentyFive)],
+  [generateWithPercentageOfRepeating(size1000, ten)],
+  [generateWithPercentageOfRepeating(size1000, twentyFive)],
   [generateWithPercentageOfRepeating(size1000, fifty)],
-  [generateWithPercentageOfRepeating(size10000, seventyFive)],
-  [generateWithPercentageOfRepeating(size100000, ninety)],
+  [generateWithPercentageOfRepeating(size1000, seventyFive)],
+  [generateWithPercentageOfRepeating(size1000, ninety)],
 ];
 
 export const groups = [
@@ -116,23 +116,23 @@ export const groups = [
 
   // === REPEATING WITH PERCENTAGE FROM 10% -> 90%
   [
-    `Array of ${group5[0][0].length} elements with repeating of one element by percentage ${ten}% `,
+    `Array of ${group5[0][0].length} elements with repeating of one element by percentage ${ten * 100}% `,
     group5[0][0],
   ],
   [
-    `Array of ${group5[1][0].length} elements with repeating of one element by percentage ${twentyFive}% `,
+    `Array of ${group5[1][0].length} elements with repeating of one element by percentage ${twentyFive * 100}% `,
     group5[1][0],
   ],
   [
-    `Array of ${group5[2][0].length} elements with repeating of one element by percentage ${fifty}% `,
+    `Array of ${group5[2][0].length} elements with repeating of one element by percentage ${fifty * 100}% `,
     group5[2][0],
   ],
   [
-    `Array of ${group5[3][0].length} elements with repeating of one element by percentage ${seventyFive}% `,
+    `Array of ${group5[3][0].length} elements with repeating of one element by percentage ${seventyFive * 100}% `,
     group5[3][0],
   ],
   [
-    `Array of ${group5[4][0].length} elements with repeating of one element by percentage ${ninety}% `,
+    `Array of ${group5[4][0].length} elements with repeating of one element by percentage ${ninety * 100}% `,
     group5[4][0],
   ],
 ];
