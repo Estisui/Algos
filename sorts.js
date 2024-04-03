@@ -73,23 +73,23 @@ export default class Sorts {
     return zeroesArray.map((zeroesNum) => parseInt(zeroesNum));
   }
 
-  shellSort(array) {
-    let n = array.length;
-    for (let interval = n / 2; interval > 0; interval /= 2) {
-      for (let i = interval; i < n; i += 1) {
-        let temp = array[i];
-        let j;
-        for (
-          j = i;
-          j >= interval && array[j - interval] > temp;
-          j -= interval
-        ) {
-          array[j] = array[j - interval];
+  shellSort(arr) {
+    for (
+      let interval = Math.floor(arr.length / 2);
+      interval > 0;
+      interval = Math.floor(interval / 2)
+    ) {
+      for (let i = interval; i < arr.length; i++) {
+        let current = arr[i];
+        let j = i;
+        while (j >= interval && arr[j - interval] > current) {
+          arr[j] = arr[j - interval];
+          j -= interval;
         }
-        array[j] = temp;
+        arr[j] = current;
       }
     }
-    return array;
+    return arr;
   }
 
   quickSort(arr) {
